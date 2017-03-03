@@ -37,7 +37,12 @@ echo "First one is ";
 echo $s;
 $st = file_get_contents($s);
 
-file_put_contents($n, $st);	
+file_put_contents($n, $st);
+list($width, $height) = getimagesize($n);
+$source = imagecreatefromjpeg($n);
+$n1=imagecreatetruecolor(320, 320);
+imagecopyresized($n1,$source,0,0,0,0,320,320,$width,$height);	
+imagejpeg($n1,$n);
 $bg = imagecreatefromjpeg($n);
 $img = imagecreatefrompng('img1.png');
 header('Content-Type: image/jpeg');

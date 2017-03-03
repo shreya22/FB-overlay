@@ -70,18 +70,20 @@
                           val = document.getElementById('img3').value;
                           }
                         if(val==1)
-                          {var source=s+"1.jpg";}
+                          {var source="http://35.160.58.203/"+s+"1.jpg";
+			console.log(source);	
+				}
                         if(val==2)
-                          {var source="img.png";}
+                          {var source="http://35.160.58.203/"+s+"2.jpg";}
                         if(val==3)
-                          {var source=s+"3.jpg";}
+                          {var source="http://35.160.58.203/"+s+"3.jpg";}
                         
                         console.log(source);
                 FB.api(
                     "/me/photos",
                     "POST",
                     {
-                        "url": "https://scontent.xx.fbcdn.net/v/t1.0-1/15193513_1873452049553640_4999736022788902829_n.jpg?oh=4f75b2ceb2c07da455cc4b5c03b12997&oe=58FE2E88"
+                        "url": source
 
                     },
                     function (response)     
