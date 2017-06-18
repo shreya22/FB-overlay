@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MOM 2K17">
-    <title>MOM2K17 | Frame</title>
+    <meta name="description" content="ISWI 2k17">
+    <title>ISWI | Frame</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
@@ -14,20 +14,22 @@
     var s;
                 // facebook initialization
                 window.fbAsyncInit = function() {
-                    FB.init({
-                      appId      : '152217291904632',
-                      xfbml      : true,
-                      version    : 'v2.5'
-                    });
-                    
-                };
-                (function(d, s, id){
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) {return;}
-                    js = d.createElement(s); js.id = id;
-                    js.src = "//connect.facebook.net/en_US/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
+                FB.init({
+                  appId      : '1970025436566578',
+                  cookie     : true,
+                  xfbml      : true,
+                  version    : 'v2.8'
+                });
+                FB.AppEvents.logPageView();   
+              };
+
+              (function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/en_US/sdk.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
                 
                 function login() {
                         FB.login(function(response) {
@@ -40,7 +42,7 @@
 				                        getPhoto();
                         } else if (response.status === 'not_authorized') {
                                 /*not logged in the app*/
-				                alert("OOPS!!!Some error has occured please try it again");
+				                alert("OOPS!!!Some error has occured or you're not_authorized");
                                         
                         } else {
                                 /*not logged in the facebook account*/
@@ -52,38 +54,20 @@
                 // getting basic user info
                 function getInfo() {
                         FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-                                
+                                console.log('response', response);
                         });
                 }
                 // uploading photo 
                 
                 function uploadPhoto() {
-                        console.log("Uploading");
-                        var val;
-                        if (document.getElementById('img1').checked) {
-                          val = document.getElementById('img1').value;
-                        }
-                        if (document.getElementById('img2').checked) {
-                          val = document.getElementById('img2').value;
-                          }
-                          if (document.getElementById('img3').checked) {
-                          val = document.getElementById('img3').value;
-                          }
-                        if(val==1)
-                          {var source="http://35.160.58.203/"+s+"1.jpg";
-			console.log(source);	
-				}
-                        if(val==2)
-                          {var source="http://35.160.58.203/"+s+"2.jpg";}
-                        if(val==3)
-                          {var source="http://35.160.58.203/"+s+"3.jpg";}
+                       var source;
+                      source="http://localhost/boozingo/"+s+"2.jpg"; 
                         
-                        console.log(source);
                 FB.api(
                     "/me/photos",
                     "POST",
                     {
-                        "url": source
+                        "url": "http://2.media.dorkly.cvcdn.com/58/64/a9e5a0dcbb872c0ec3dd9bd01f3980a1.jpg"
 
                     },
                     function (response)     
@@ -91,10 +75,10 @@
                          {
                                 if (!response || response.error) {
                                         
-					 alert(response.error);
+					                               alert(response.error.message);
                                         console.log(response.error);//window.location.href="index.php";
                                 } else {
-//                                        
+                                       
 						alert("Your photo has been successfuly uploaded");
 						window.location.href="index.php";
                                 }
@@ -112,10 +96,8 @@ width:400},
                         {
                                 if(response && !response.error)
                                 {
-                                        console.log(response.data);
-                                        senddata(response.data.url);
+                                        // console.log('response.data', response.data.url);
                                         senddata2(response.data.url);
-                                        senddata3(response.data.url);
                                 }
                                 else {
                                         console.log(response.error);
@@ -124,28 +106,6 @@ width:400},
                         )
         }
 
-        function senddata(url)
-        {
-
-                var params = "url="+encodeURI(url)+"&id="+s;
-                console.log(url);
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "overlay.php", true);
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-
-                 xhttp.onreadystatechange = function() {
-                 if (this.readyState == 4 && this.status == 200) {
-                console.log("done");
-
-//                uploadPhoto();
-                document.getElementById("test1").src=s+"1.jpg";
-
-  }
-  };
-  
-  xhttp.send(params);
-        }
 //overlay2
     function senddata2(url)
     {
@@ -169,29 +129,7 @@ width:400},
 
         xhttp.send(params);
     }
-//overlay3
-    function senddata3(url)
-    {
 
-        var params = "url="+encodeURI(url)+"&id="+s;
-        console.log(url);
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "overlay3.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("done");
-
-//                uploadPhoto();
-                document.getElementById("test3").src=s+"3.jpg";
-
-            }
-        };
-
-        xhttp.send(params);
-    }
         </script>
 <style>
 .btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -283,19 +221,17 @@ input[type=radio]:checked + label>img {
 
   <body>
     <div class="container-fluid text-center">
-      <img id="logo" src="MOM.png">
+      <!-- <img id="logo" src="MOM.png"> -->
       <span class="heading">Frame</span>
-      <p style="color: #bdbdbd">Get a cool MoM 2k17 badge on your Facebook profile picture</p>
-      <p style="color: #9e9e9e">Login to Facebook with the button below. Your profile picture with MoM 2k17 badge will be displayed.
+      <p style="color: #bdbdbd">Get a cool ISWI badge on your Facebook profile picture</p>
+      <p style="color: #9e9e9e">Login to Facebook with the button below. Your profile picture with ISWI badge will be displayed.
          Click on Upload to Facebook to set it as your Profile Picture.</p>
          <form onsubmit="function()">
       <div class="row">
-        <div class="col-md-4"> <input type="radio" id="img1" value="1" name="frame" class="img">
-      <label for="img1"><img id="test1" class="img-thumbnail" src="dummy.jpg" alt="DP" /></label></div>
+        <div class="col-md-4">&nbsp;</div>
         <div class="col-md-4"> <input type="radio" id="img2" value="2" name="frame" class="img">
         <label for="img2"> <img id="test2" class="img-thumbnail" src="dummy.jpg" alt="DP" /></label></div>
-        <div class="col-md-4"> <input type="radio" id="img3" value="3" name="frame" class="img">
-        <label for="img3"> <img id="test3" class="img-thumbnail" src="dummy.jpg" alt="DP" /></label></div>
+        <div class="col-md-4">&nbsp;</div>
       </div>
         <div>
       <div>
