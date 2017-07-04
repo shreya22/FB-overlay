@@ -1,0 +1,68 @@
+.btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+
+.btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}.btn-facebook:focus,.btn-facebook.focus{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:hover{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active:hover,.btn-facebook.active:hover,.open>.dropdown-toggle.btn-facebook:hover,.btn-facebook:active:focus,.btn-facebook.active:focus,.open>.dropdown-toggle.btn-facebook:focus,.btn-facebook:active.focus,.btn-facebook.active.focus,.open>.dropdown-toggle.btn-facebook.focus{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
+
+body {
+        background: url("bg2.jpg") no-repeat center center fixed;
+        
+   background-size:cover;
+}
+
+.heading {
+  font-family: 'Cherry Swash', cursive;
+  color: #e0e0e0;
+}
+
+#login, #upload {
+  margin-bottom:10px;
+}
+
+#logo {
+        width: 100px;
+        margin-top: 20px;
+}
+
+#test2 {
+    width: 70%;
+    margin: 20px;
+    opacity: 0.9;
+}
+.img {
+    position: absolute;
+    left: -9999px;
+}
+input[type=radio]:checked + label>img {
+    border: 1px solid #fff;
+    box-shadow: 0 0 5px 5px #090;
+}
+@media only screen and (max-width: 700px) {
+  #test1 {
+    width: 50%; 
+  }
+    #test2 {
+        width: 50%;
+    }
+    #test3 {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+  #test1 {
+    width: 70%; 
+  }
+    #test2 {
+        width: 70%;
+    }
+    #test3 {
+        width: 70%;
+    }
+}
