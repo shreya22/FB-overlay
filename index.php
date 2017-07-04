@@ -61,7 +61,7 @@
                 
                 function uploadPhoto() {
                        var source;
-                      source="http://localhost/boozingo/"+s+"2.jpg"; 
+                      source="http://localhost/boozingo/"+s+".jpg"; 
                         
                 FB.api(
                     "/me/photos",
@@ -96,7 +96,7 @@ width:400},
                         {
                                 if(response && !response.error)
                                 {
-                                        // console.log('response.data', response.data.url);
+                                        console.log('response.data', response.data.url);
                                         senddata2(response.data.url);
                                 }
                                 else {
@@ -109,20 +109,18 @@ width:400},
 //overlay2
     function senddata2(url)
     {
-
         var params = "url="+encodeURI(url)+"&id="+s;
         console.log(url);
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "overlay2.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 console.log("done");
 
-//                uploadPhoto();
-                document.getElementById("test2").src=s+"2.jpg";
+//                uploadPhoto();f
+                document.getElementById("test2").src=s+".jpg";
 
             }
         };
@@ -145,7 +143,7 @@ width:400},
 .btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
 
 body {
-        background: url("bg.jpg") no-repeat center center fixed;
+        background: url("bg2.jpg") no-repeat center center fixed;
         
    background-size:cover;
 }
@@ -164,23 +162,10 @@ body {
         margin-top: 20px;
 }
 
-
-#test1 {
-  width: 70%;
-  margin: 20px;
-  opacity: 0.7;
-}
-
 #test2 {
     width: 70%;
     margin: 20px;
-    opacity: 0.7;
-}
-
-#test3 {
-    width: 70%;
-    margin: 20px;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 .img {
     position: absolute;
@@ -223,7 +208,7 @@ input[type=radio]:checked + label>img {
     <div class="container-fluid text-center">
       <!-- <img id="logo" src="MOM.png"> -->
       <span class="heading">Frame</span>
-      <p style="color: #bdbdbd">Get a cool ISWI badge on your Facebook profile picture</p>
+      <h2 style="color: #bdbdbd">Get a cool ISWI badge on your Facebook profile picture</h2>
       <p style="color: #9e9e9e">Login to Facebook with the button below. Your profile picture with ISWI badge will be displayed.
          Click on Upload to Facebook to set it as your Profile Picture.</p>
          <form onsubmit="function()">
