@@ -1,7 +1,9 @@
 <?php
 	
 	// $f = array_keys($_POST) ;
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // reconstructing the image url
 	$url = $_POST['url'];
 	$oh=$_POST['oe'];

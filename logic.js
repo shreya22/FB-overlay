@@ -4,7 +4,7 @@
     // facebook initialization
     window.fbAsyncInit = function() {
         FB.init({
-          appId      : '1970025436566578',
+          appId      : '661044557419437',
           cookie     : true,
           xfbml      : true,
           version    : 'v2.8'
@@ -43,14 +43,13 @@
 
     function uploadPhoto() {
         var source;
-        source="http://localhost/boozingo/"+s+".jpg"; 
-            
+        source="http://domainfortestingmysite.gq/iswi-fbOverlay/" +s+".jpg"; 
+ 	console.log('image source', source);           
         FB.api(
             "/me/photos",
             "POST",
             {
-                "url": "http://2.media.dorkly.cvcdn.com/58/64/a9e5a0dcbb872c0ec3dd9bd01f3980a1.jpg"
-
+                "url": source
             },
             function (response){
                 if (!response || response.error) {
