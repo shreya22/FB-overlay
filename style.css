@@ -11,14 +11,14 @@
 .btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
 
 body {
-        background: url("bg2.jpg") no-repeat center center fixed;
-        
-   background-size:cover;
+  background: url("bg.jpg") no-repeat center center fixed;      
+  background-size:cover;
 }
 
 .heading {
-  font-family: 'Cherry Swash', cursive;
-  color: #e0e0e0;
+  font-family: 'Tahoma';
+  color: #FF9300;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 #login, #upload {
@@ -31,7 +31,8 @@ body {
 }
 
 #test2 {
-    width: 70%;
+    width: 320px;
+    height: 320px;
     margin: 20px;
     opacity: 0.9;
 }

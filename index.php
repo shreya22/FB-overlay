@@ -15,19 +15,21 @@
 
 
   <body>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
     <div class="container-fluid text-center">
       <!-- <img id="logo" src="MOM.png"> -->
-      <h2 style="color: #bdbdbd">Get a cool ISWI badge on your Facebook profile picture</h2>
-      <p>
+      <h1 class="heading">Get a cool ISWI badge on your Facebook profile picture</h1>
+      <!-- <p>
         Login to facebook with the button below.
       </p>
-         
+          -->
 
       <form onsubmit="function()">
         <div class="row">
           <div class="col-md-4">&nbsp;</div>
           <div class="col-md-4"> <input type="radio" id="img2" value="2" name="frame" class="img">
-            <label for="img2"> <img id="test2" class="img-thumbnail" src="dummy.jpg" alt="DP" /></label>
+            <label for="img2"> <img id="test2" class="img-thumbnail" src="dummy1.jpg" alt="DP" /></label>
           </div>
           <div class="col-md-4">&nbsp;</div>
         </div>
