@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 	imagecopyresized($n1,$source,0,0,0,0,320,320,$width,$height); 
 	imagejpeg($n1,$n);
 	$bg = imagecreatefromjpeg($n);
-	$img = imagecreatefrompng('img1.png');
+	$img = imagecreatefrompng('iswi-badge.png');
 	header('Content-Type: image/jpeg');
 	imagejpeg($img);
 
