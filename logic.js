@@ -44,39 +44,39 @@
     function uploadPhoto() {
         var source;
         source="http://karmyo.com/iswi/" +s+".jpg";            
-  //       FB.api(
-  //           "/me/photos",
-  //           "POST",
-  //           {
-  //               "url": source,
-		// "caption": "aaa caption text"
-  //           },
-  //           function (response){
-  //               if (!response || response.error) {
-  //                   alert(response.error.message);
-  //                   console.log(response.error);//window.location.href="index.php";
-  //               } else {           
-  //                   alert("Your photo has been successfuly uploaded");
-  //                   window.location.href="index.php";
-  //               }
-  //           }
-  //       );
-
-            FB.ui({
-              method: 'feed',
-              link: source,
-              caption: 'An example caption',
-            }, 
-              function (response){
-                    if (!response || response.error) {
-                        alert(response.error.message);
-                        console.log(response.error);//window.location.href="index.php";
-                    } else {           
-                        alert("Your photo has been successfuly uploaded");
-                        window.location.href="index.php";
-                    }
+        FB.api(
+            "/me/photos",
+            "POST",
+            {
+                "url": source,
+		      "caption": "aaa caption text"
+            },
+            function (response){
+                if (!response || response.error) {
+                    alert(response.error.message);
+                    console.log(response.error);//window.location.href="index.php";
+                } else {           
+                    alert("Your photo has been successfuly uploaded");
+                    window.location.href="index.php";
                 }
-            );
+            }
+        );
+
+            // FB.ui({
+            //   method: 'feed',
+            //   link: source,
+            //   caption: 'An example caption',
+            // }, 
+            //   function (response){
+            //         if (!response || response.error) {
+            //             alert(response.error.message);
+            //             console.log(response.error);//window.location.href="index.php";
+            //         } else {           
+            //             alert("Your photo has been successfuly uploaded");
+            //             window.location.href="index.php";
+            //         }
+            //     }
+            // );
     }
 
     function getPhoto()
