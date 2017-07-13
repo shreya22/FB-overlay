@@ -11,14 +11,14 @@
 .btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
 
 body {
-  background: url("bg.jpg") no-repeat center center fixed;      
+  background: url("iswibg.jpg") no-repeat center center fixed;      
   background-size:cover;
 }
 
 .heading {
   font-family: 'Tahoma';
-  color: #FF9300;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  color:  #C10524;
+  text-shadow: -1.5px 0 #ECE5D3, 0 1.5px #ECE5D3, 1.5px 0 #ECE5D3, 0 -1.5px #ECE5D3;
 }
 
 #login, #upload {
