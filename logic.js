@@ -49,7 +49,7 @@
             "POST",
             {
                 "url": source,
-		        "caption": "Support this mission. CLick on <a href='karmyo.com/iswi'>karmyo.com/iswi</a>"
+		        "caption": "Support this mission. Click on karmyo.com/iswi"
             },
             function (response){
                 if (!response || response.error) {
