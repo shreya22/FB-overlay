@@ -43,13 +43,13 @@
 
     function uploadPhoto() {
         var source;
-        source="http://karmyo.com/iswi/" +s+".jpg"; 
- 	console.log('image source', source);           
+        source="http://karmyo.com/iswi/" +s+".jpg";            
         FB.api(
             "/me/photos",
             "POST",
             {
-                "url": source
+                "url": source,
+		"caption": "aaa caption text"
             },
             function (response){
                 if (!response || response.error) {
@@ -73,6 +73,7 @@
                     if(response && !response.error)
                     {
                             senddata(response.data.url);
+			    console.log('image url', response.data.url);
                     }
                     else {
                             console.log(response.error);
@@ -84,7 +85,7 @@
     function senddata(url)
     {
         var params = "url="+encodeURI(url)+"&id="+s;
-        console.log(url);
+        console.log(params);
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "overlay2.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
