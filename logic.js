@@ -43,7 +43,7 @@
 
     function uploadPhoto() {
         var source;
-        source="http://karmyo.com/iswi/" +s+".jpg";            
+        source="http://iswi.karmyo.com/" +s+".jpg";            
         FB.api(
             "/me/photos",
             "POST",
